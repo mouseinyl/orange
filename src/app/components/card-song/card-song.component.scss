@@ -1,0 +1,66 @@
+.content {
+  width: 25em;
+  display: block;
+  -webkit-box-shadow: 4px 1px 9px 1px #b6b6b6;;
+  box-shadow: 4px 1px 9px 1px #b6b6b6;;
+  margin: 1em;
+  border-radius: 1em;
+  & .genre{
+    display: block;
+    text-align: center;
+    & span{
+      padding: 0px 10px;
+      background: aqua;
+      border-radius: 15px;
+      margin: 4px;
+      color: white;
+    }
+
+  }
+  & .sub-content{
+    display: flex;
+    & .img {
+       width: 6em;
+       height: 6em;
+       display: flex;
+       & img {
+        width: auto;
+        height: auto;
+        border-radius: 100%;
+        margin: 5px;
+       }
+     }
+    & .information{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: auto;
+      width: 12em;
+      text-align: center;
+      & .name-user{
+        color: #4f4e4e;
+        font-weight: bold;
+        margin: 2px 0px;
+        cursor: pointer;
+      }
+      & .name-song{
+        width: inherit;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-left: 1em;
+      }
+
+    }
+    & .button{
+      margin: auto;
+      display: flex;
+      justify-content: end;
+    }
+
+  }
+  .hide{
+    display: none;
+  }
+
+}

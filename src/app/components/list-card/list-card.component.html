@@ -1,0 +1,5 @@
+<div class="content">
+  <div *ngFor="let item of data" >
+    <app-card-song  [data]="item" (accion)="action($event)"></app-card-song>
+  </div>
+</div>

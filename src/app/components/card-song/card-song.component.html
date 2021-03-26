@@ -1,0 +1,22 @@
+
+<div class="content bg">
+  <!-- <div *ngIf="url != undefined">
+    <audio [src]="url" autoplay #audio  class="hide"></audio>
+  </div> -->
+    <div class="sub-content ">
+      <div class="img">
+        <img [src]="data.artwork_url" alt="">
+      </div>
+      <div class="information">
+        <span class="name-user" (click)="goArtist(data.user_id)">{{data.user.username}}</span>
+        <span class="name-song">{{data.title}}</span>
+        <span class="bagget">{{data.genre}}</span>
+      </div>
+      <div class="button">
+        <button mat-button (click)="play(data.id)">
+          <mat-icon>play_arrow</mat-icon>
+        </button>
+      </div>
+    </div>
+</div>
+

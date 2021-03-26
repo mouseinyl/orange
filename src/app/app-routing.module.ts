@@ -1,7 +1,8 @@
-import { ArtistComponent } from './view/artist/artist.component';
+import { ArtistComponent } from './pages/artist/artist.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './view/home/home.component';
+import { HomeComponent } from './pages/home/home.component';
+
 
 const routes: Routes = [
   {
@@ -9,9 +10,10 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'artista/:id',
+    path: 'artista:id',
     component: ArtistComponent
-  }
+  },
+
 ];
 
 @NgModule({

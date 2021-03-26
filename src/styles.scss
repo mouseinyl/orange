@@ -55,16 +55,7 @@ body{
 .secondary-color{
   color: $secodary-color;
 }
-.flex-content{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+mat-icon{
+  color: $secodary-color;
 }
-.w40{
-  width: 40%;
-}
-.w60{
-  width: 60%;
-}
-
 
