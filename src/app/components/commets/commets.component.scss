@@ -1,0 +1,40 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+.content {
+  display: block;
+  width: 78%;
+  margin: auto;
+  padding: 1em;
+  & .content-data {
+    display: flex;
+    flex-direction: row;
+    & .img {
+      display: block;
+      width: 4em;
+      height: 4em;
+      margin: auto 0.5em;
+      & img{
+        width: inherit;
+        height: inherit;
+        border-radius: 100%;
+        padding: 0px 0.5em
+      }
+    }
+    & .info{
+      padding: 0px 0.5em;
+      & .header {
+        padding: 4px 0px;
+        & .name {
+          margin-right: 0.5em;
+          font-size: 12px;
+          font-weight: bold;
+          font-size: small;
+        }
+      }
+    }
+  }
+}
+
+

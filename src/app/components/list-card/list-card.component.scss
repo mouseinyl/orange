@@ -1,7 +1,17 @@
 .content{
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
   width: auto;
   margin: auto;
+  justify-content: center;
+  & .repro{
+    width:35% ;
+    display: flex;
+    flex-direction: column;
+
+  }
+  & .list-song{
+    width:60% ;
+
+  }
 }

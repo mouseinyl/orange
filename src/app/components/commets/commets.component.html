@@ -1,0 +1,17 @@
+<div class="content" *ngFor="let item of arrayComment">
+  <div class="content-data">
+    <div class="img">
+      <img [src]="item.user.avatar_url" alt="">
+    </div>
+    <div class="info">
+      <div class="header">
+        <span class="name secondary-color">{{item.user.username}}</span>
+        <span class="date">{{item.created_at | date:'mediumDate' }}</span>
+        <hr>
+      </div>
+      <div class="body">
+        <p>{{item.body}}</p>
+      </div>
+    </div>
+  </div>
+</div>

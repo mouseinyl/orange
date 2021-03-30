@@ -16,13 +16,17 @@ export class TracksService {
 
     this.options.params = this.options.params.set('client_id', this.clientId)
   }
-
-
   getTrack(){
     return this.http.get(this.endpoint+ 'tracks' ,this.options)
   }
   getSong(id){
-    // /tracks/347288994/stream
     return this.http.get(this.endpoint+ `tracks/${id}/stream`  ,this.options)
+  }
+  getComment(id:number, limit?:number){
+    // https://api.soundcloud.com/tracks/308946187/comments?limit=2&linked_partitioning=true
+    if(limit){
+      this.options.params = this.options.params.set('limit',limit +'');
+    }
+    return this.http.get(this.endpoint+ `tracks/${id}/comments`,this.options)
   }
 }

@@ -6,65 +6,29 @@ export interface TracksObject {
   		title: string,
   		user_id: number,
   		user: {
-  			id: number,
-  			kind: string,
-  			permalink: string,
+        id: number,
   			username: string,
-  			uri: string,
-  			permalink_url:string,
   			avatar_url: string
   		},
+      favoritings_count: number,
+}
+export interface TrackCardObject {
+  stream:boolean,
+  timeSongbuffer:any
+}
+export interface trackComment {
+  id: number,
+  body: string ,
+  created_at: string,
+  timestamp: number,
+  track_id: number,
+  user_id: number,
+  user: {
+    id: number,
+    username: string,
+    avatar_url:string
+  },
 }
 
-// {
-// 	"0": {
-// 		"kind": "track",
-// 		"created_at": "2019/04/03 16:14:38 +0000",
-// 		"duration": 3607951,
-// 		"commentable": true,
-// 		"comment_count": 3072,
-// 		"state": "finished",
-// 		"original_content_size": 147592415,
-// 		"last_modified": "2021/03/24 06:49:30 +0000",
-// 		"sharing": "public",
-// 		"tag_list": "\"big bootie\" bootie booty mashup pregame party mix \"power hour\" workout",
-// 		"permalink": "bb15",
-// 		"streamable": true,
-// 		"embeddable_by": "all",
-// 		"purchase_title": "FREE DOWNLOAD",
-// 		"label_id": null,
-// 		"description": "FREE DOWNLOAD: http://smarturl.it/BB15DL\n\nTRACKLIST: http://smarturl.it/BB15Tracklist\n\nUPCOMING SHOWS IN 2020:\nhttp://smarturl.it/campsuperdope\n\n1/16 Emo’s, Austin TX\n1/17 Canton Hall, Dallas TX\n1/18 House Of Blues, Houston TX\n1/22 Varsity Theatre, Baton Rouge LA\n1/23 Cannery Ballroom, Nashville TN\n1/24 Varirety Playhouse, Atlanta GA\n1/25 The Fillmore, Charlotte NC\n1/28 Music Farm, Charleston SC\n1/29 TLA, Philadelphia PA\n1/30 Echostage, Washington DC\n1/31 Terminal 5, New York NY\n2/1 Terminal 5, New York NY\n2/4 Shrine, Mashantucket CT\n2/5 House Of Blues, Boston MA\n2/6 House Of Blues, Boston MA\n2/7 The Phoenix, Toronto ON\n2/8 Agora Theatre, Cleveland OH\n2/11 Deluxe, Indianpolis IN\n2/12 The Bluestone, Columbus OH\n2/13 Majestic Theater, Detroit MI\n2/14 Aragon Ballroom, Chicago IL\n2/15 Skyway Theatre, Minneapolis MN\n2/18 The Granada Theatre, Lawrence KS\n2/19 The Bourbon Theatre, Lincoln NE\n2/21 Shrine, Los Angeles CA\n2/22 The Mission Ballroom, Denver CO\n2/24 Belly Up, Aspen CO\n2/26 The Van Buren, Phoenix AZ\n2/27 The Fremont Theater, San Luis Obispo CA\n2/28 The Warfield, San Francisco CA\n2/29 Catalyst, Santa Cruz CA\n3/4 McDonald Theater, Eugene OR\n3/5 Roseland Theatre, Portland OR\n3/6 Showbox SoDo, Seattle WA\n3/7 Vogue Theatre, Vancouver BC",
-// 		"label_name": null,
-// 		"release": null,
-// 		"track_type": null,
-// 		"key_signature": null,
-// 		"isrc": null,
-// 		"video_url": null,
-// 		"bpm": null,
-// 		"release_year": null,
-// 		"release_month": null,
-// 		"release_day": null,
-// 		"original_format": "mp3",
-// 		"license": "all-rights-reserved",
-// 		"uri": "https://api.soundcloud.com/tracks/600383397",
-// 		"user_uri": "https://api.soundcloud.com/users/427747683",
-// 		"permalink_url": "https://soundcloud.com/twofriendsbigbootie/bb15",
-// 		"artwork_url": "https://i1.sndcdn.com/artworks-000514501620-gexaqh-large.jpg",
-// 		"stream_url": "https://api.soundcloud.com/tracks/600383397/stream",
-// 		"download_url": "https://api.soundcloud.com/tracks/600383397/download",
-// 		"waveform_url": "https://wave.sndcdn.com/DCKGzi4Mue5d_m.png",
-// 		"domain_lockings": null,
-// 		"available_country_codes": null,
-// 		"label": null,
-// 		"secret_token": null,
-// 		"secret_uri": null,
-// 		"user_favorite": null,
-// 		"user_playback_count": null,
-// 		"playback_count": 12784056,
-// 		"download_count": 0,
-// 		"favoritings_count": 265056,
-// 		"reposts_count": 11470,
-// 		"downloadable": false,
-// 		"downloads_remaining": null
-// 	}
-// }
+
+

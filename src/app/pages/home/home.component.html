@@ -1,9 +1,11 @@
 
 
 <app-nav></app-nav>
-<div >
-  <div>
-    <app-list-card></app-list-card>
+<div class="content" [ngClass]="on ? 'row': ''">
+  <div *ngIf="on" class="player" >
+    <app-player class="slide-fwd-center"></app-player>
+  </div>
+  <div class="list">
+    <router-outlet></router-outlet>
   </div>
 </div>
-
