@@ -1,4 +1,4 @@
-<div class="content" [ngClass]="on ? 'list-song': ''">
+<div class="content animate__pulse" [ngClass]="on ? 'list-song': ''">
   <div *ngFor="let item of data" >
     <app-card-song  [data]="item" (onPlay)="action($event)"></app-card-song>
   </div>

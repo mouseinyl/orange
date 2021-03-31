@@ -16,6 +16,7 @@ export class CardSongComponent implements OnInit {
   @Input() data: TracksObject;
   @Output() onPlay: EventEmitter<any> = new EventEmitter()
   public status: { hasData: boolean, isPause: boolean }
+  public loadding =  false
 
   constructor
     (
@@ -27,6 +28,7 @@ export class CardSongComponent implements OnInit {
       if (x.trackData) {
         if (x.trackData.id == this.data.id) {
           this.status = { hasData: x.trackCardObject.on, isPause: !x.trackCardObject.status }
+          this.loadding = false;
         }
       }
     })
@@ -40,6 +42,7 @@ export class CardSongComponent implements OnInit {
       !this.status.isPause ? this.pause() : this.playSong()
     } else {
       this.onPlay.emit({ status: !this.status.hasData, id: id, data: this.data })
+      this.loadding = true;
     }
   }
   pause() {
