@@ -23,6 +23,7 @@ import { ListCardComponent } from './components/list-card/list-card.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { PlayerComponent } from './components/player/player.component';
 import { CommetsComponent } from './components/commets/commets.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -45,6 +46,7 @@ import { CommetsComponent } from './components/commets/commets.component';
     BrowserAnimationsModule,
     HttpClientModule,
     AngularMaterialModule,
+    FormsModule,
     StoreModule.forRoot({track: trackReducer})
   ],
   providers: [],

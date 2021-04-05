@@ -1,31 +1,36 @@
-  <div class="content bg rotate-center">
-      <audio controls #audioPlayer [src]="url"></audio>
-      <div class="sub-content ">
-        <div>
-          <span>
-            <mat-icon>favorite</mat-icon>
-            {{data.favoritings_count}}
-          </span>
-        </div>
-        <div [ngClass]="status.isPause ? '' : 'giro'">
-          <div class="content-play-button">
-            <button mat-button (click)="play()">
-              <mat-icon>{{!status.isPause ? 'pause' : 'play_arrow'}}</mat-icon>
-            </button>
-          </div>
-          <div class="img" >
-            <img [src]="data.artwork_url == null ? 'assets/images.png' : data.artwork_url " alt="">
-          </div>
-        </div>
-        <div class="information">
-          <span class="name-user" (click)="goArtist(data.user_id)">{{data.user.username}}</span>
-          <span class="name-song">{{data.title}}</span>
-          <span class="bagget">{{data.genre}}</span>
-        </div>
-        <div class="button">
-        </div>
+<div class="content bg  shadow rotate-center">
+  <audio controls #audioPlayer [src]="url" class="" autoplay="true" hidden></audio>
+  <div class="sub-content ">
+    <!--  -->
+    <div>
+      <span style="float: right;">
+        <mat-icon>favorite</mat-icon>
+        <span class="bagget secondary-color">{{data.favoritings_count/1000 }} k</span>
+      </span>
+    </div>
+    <!--  -->
+    <div class="img">
+      <img [src]="data.artwork_url == null ? 'assets/images.png' : data.artwork_url " alt="">
+    </div>
+    <!--  -->
+    <div class="control">
+      <div class="btn bg shadow" (click)="play()">
+        <span>
+          <mat-icon>{{!status.isPause ? 'pause' : 'play_arrow'}}</mat-icon>
+        </span>
       </div>
+    </div>
+    <!--  -->
+    <div class="information">
+      <span class="name-user" (click)="goArtist(data.user_id)">{{data.user.username}}</span>
+      <span class="name-song">{{data.title}}</span>
+      <span class="">{{data.genre}}</span>
+    </div>
+    <div class="button">
+    </div>
   </div>
-<!-- <div class="commet">
-    <app-commets [trackiId]="data.id"></app-commets>
-</div> -->
+</div>
+<div class="comment">
+  <span class="title">Comentarios</span>
+  <app-commets ></app-commets>
+</div>

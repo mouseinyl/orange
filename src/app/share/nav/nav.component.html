@@ -2,7 +2,18 @@
 <nav>
   <p>
     <mat-toolbar>
-      <span>My Application</span>
+      <div class="logo" routerLink="/">
+        <span class="focus-in-expand secondary-color ml text" >Orange</span>
+        <img src="assets/naranja.svg" class="giro anime" alt="">
+      </div>
+      <div class="mr">
+        <button class="slide-left" mat-button  matSuffix mat-icon-button aria-label="Clear" (click)="see()" >
+          <mat-icon>search</mat-icon>
+        </button>
+        <mat-form-field class="slide-left input" *ngIf="on">
+          <input matInput type="text"  #input (keyup.enter)="find(input.value)">
+        </mat-form-field>
+      </div>
     </mat-toolbar>
   </p>
 </nav>

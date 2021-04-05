@@ -1,5 +1,5 @@
 import { CardSongComponent } from '../components/card-song/card-song.component';
-import { TrackCardObject, TracksObject } from './../interface/tracks';
+import { TrackCardObject, TracksObject } from '../model/interface/tracks';
 
 
 export interface storeTrack{

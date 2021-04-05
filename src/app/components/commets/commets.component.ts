@@ -1,4 +1,6 @@
-import { trackComment } from './../../interface/tracks';
+import { Store } from '@ngrx/store';
+import { storeTrack } from 'src/app/store/store.structure';
+import { trackComment } from '../../model/interface/tracks';
 import { Component, Input, OnInit } from '@angular/core';
 import { TracksService } from 'src/app/services/tracks.service';
 
@@ -8,17 +10,18 @@ import { TracksService } from 'src/app/services/tracks.service';
   styleUrls: ['./commets.component.scss']
 })
 export class CommetsComponent implements OnInit {
-  @Input() trackiId:number;
   public arrayComment:trackComment[] = [];
 
-  constructor(public track: TracksService) { }
-
-  ngOnInit(): void {
-    this.getCommet()
+  constructor(public track: TracksService,private store: Store<{ track: storeTrack }>  ) {
+    this.store.select('track').subscribe((x)=>{
+      this.getCommet(x.trackData.id)
+    })
   }
 
-  getCommet(){
-    this.track.getComment(this.trackiId,15).subscribe((x:trackComment[])=>{this.arrayComment = x})
+  ngOnInit(): void {}
+
+  getCommet(id){
+    this.track.getComment(id,15).subscribe((x:trackComment[])=>{this.arrayComment = x})
   }
 }
 

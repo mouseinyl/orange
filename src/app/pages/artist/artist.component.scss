@@ -1,0 +1,63 @@
+.content {
+  width: 50em;
+  display: block;
+  margin: auto;
+  // margin: 1em;
+  border-radius: 1em;
+  padding: 1em;
+
+  & .sub-content {
+	  display: inline-flex;
+  }
+}
+
+.img{
+	display: flex;
+	height: 7em;
+	width: 7em;
+	margin-right: 3em;
+   img{
+     display:block;
+     width: inherit;
+     height: inherit;
+   }
+}
+.information {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+  width: 40em;
+
+  & .sub-content{
+    justify-content: space-between;
+
+  & .info-user{
+    width: 10em;
+     & .name-user{
+
+      font-weight: bold;
+      margin: 2px 0px;
+      cursor: pointer;
+     }
+  }
+  & .icons{
+    text-align: center;
+      & mat-icon{
+        font-size: 2em;
+        margin: auto;
+        margin-bottom: 5px;
+      }
+      & span{
+        margin: 0em 1.8em;
+      }
+    }
+  }
+}
+.f-row{
+  display: flex;
+  flex-direction: row;
+}
+.f-colum{
+  display: flex;
+  flex-direction: column;
+}

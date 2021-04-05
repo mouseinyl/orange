@@ -1,1 +1,40 @@
-<p>artist works!</p>
+<div>
+    <app-spinner *ngIf="loadding"></app-spinner>
+    <div *ngIf="!loadding" class="slide-top">
+      <div class="content bg shadow" >
+        <div class="sub-content ">
+          <div class="img">
+            <img [src]="userData.userData.avatar_url == null ? 'assets/images.png' : userData.userData.avatar_url " alt="">
+          </div>
+          <div class="information">
+            <div class="f-row sub-content">
+              <div class="f-colum info-user">
+                <span class="name-user secondary-color">{{userData.userData.full_name}}</span>
+                <!-- <span class="bagget">pop</span> -->
+              </div>
+              <div class="f-row icons">
+                  <span class="f-colum">
+                    <mat-icon>person</mat-icon>
+                    <span>
+                      {{userData.userData.followers_count}}
+                    </span>
+                  </span>
+                  <span class="f-colum">
+                  <mat-icon>favorite</mat-icon>
+                  <span>300,000</span>
+                </span>
+                <span class="f-colum">
+                  <mat-icon>album</mat-icon>
+                  <span>{{userData.userData.track_count}}</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <app-list-card [arrayTrackForUser]="userData.userTracks"></app-list-card>
+      </div>
+    </div>
+
+</div>

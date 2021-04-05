@@ -1,8 +1,6 @@
 .content {
   width: 25em;
   display: block;
-  -webkit-box-shadow: 4px 1px 9px 1px #b6b6b6;
-  box-shadow: 4px 1px 9px 1px #b6b6b6;
   margin: auto;
   border-radius: 1em;
    & .genre {
@@ -25,34 +23,51 @@
       height: 10em;
       display: flex;
       margin: auto;
+      position: relative;
+      & img {
+        width: auto;
+        height: auto;
+        border-radius: 10px;
+        margin: 5px;
+      }
     }
-    & img {
-      width: auto;
-      height: auto;
-      border-radius: 100%;
-      margin: 5px;
+    & .control{
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row;
+      .btn{
+        margin-top: 3px;
+        padding: 0.3em;
+        border-radius: 100%;
+        justify-content: center;
+        display: flex;
+        cursor: pointer;
+        & span{
+          display: contents;
+        }
+      }
     }
-  }
-  & .information {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: auto;
-    width: 12em;
-    text-align: center;
-    margin-top: 1em;
-    & .name-user {
-      color: #4f4e4e;
-      font-weight: bold;
-      margin: 2px 0px;
-      cursor: pointer;
-    }
-    & .name-song {
-      width: inherit;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      // margin-left: 1em;
+    & .information {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: auto;
+      width: 12em;
+      text-align: center;
+      margin-top: 1em;
+      & .name-user {
+        color: #4f4e4e;
+        font-weight: bold;
+        margin: 2px 0px;
+        cursor: pointer;
+      }
+      & .name-song {
+        width: inherit;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        // margin-left: 1em;
+      }
     }
   }
   & .button {
@@ -68,6 +83,19 @@
   -webkit-animation: rotate-center 3s linear infinite both;
   animation: rotate-center 3s linear infinite both;
 }
+.bagget{
+  display: block;
+  background: white;
+  text-align: center;
+  border-radius: 15px;
+  position: relative;
+  top: -3em;
+  left: 2.5em;
+  font-size: x-small;
+  font-weight: bold;
+  padding: 0px 5px;
+}
+
 .content-play-button {
   position: absolute;
   & button {
@@ -78,5 +106,21 @@
     & mat-icon {
       font-size: 4em;
     }
+  }
+}
+.comment {
+	height: 500px;
+	overflow: scroll;
+	scrollbar-width: none;
+	padding: 0px;
+	margin: 0px;
+  width: 35em;
+  & .title{
+    color: #4f4e4e;
+    font-weight: bold;
+    margin: 0px;
+    text-align: center;
+    margin-top: 1em;
+    display: block;
   }
 }

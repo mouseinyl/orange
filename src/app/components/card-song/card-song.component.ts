@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { storeTrack } from 'src/app/store/store.structure';
 import { Router } from '@angular/router';
 import { PauseAction, PlayAction } from 'src/app/store/track.action';
-import { TracksObject } from 'src/app/interface/tracks';
+import { TracksObject } from 'src/app/model/interface/tracks';
 
 
 @Component({
@@ -19,13 +19,17 @@ export class CardSongComponent implements OnInit {
   public loadding =  false
 
   constructor
-    (
-      private store: Store<{ track: storeTrack }>,
-      private router: Router
-    ) {
+    (private store: Store<{ track: storeTrack }>,private router: Router) {}
+
+  ngOnInit(): void { this.start() }
+
+  start(){
     this.store.select('track').subscribe((x) => {
       this.status = { hasData: false, isPause: true }
-      if (x.trackData) {
+      if (typeof x.trackData  != undefined &&
+          typeof this.data !=  undefined   &&
+          x.trackData != null
+          ) {
         if (x.trackData.id == this.data.id) {
           this.status = { hasData: x.trackCardObject.on, isPause: !x.trackCardObject.status }
           this.loadding = false;
@@ -33,9 +37,6 @@ export class CardSongComponent implements OnInit {
       }
     })
   }
-
-  ngOnInit(): void { }
-
 
   play(id) {
     if (this.status.hasData) {

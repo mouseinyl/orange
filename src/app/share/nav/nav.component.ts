@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-
-  constructor() { }
+  public on =false
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+  }
+  see(){
+    this.on = !this.on
+  }
+  find(x){
+      this.router.navigate(['',x])
   }
 
 }

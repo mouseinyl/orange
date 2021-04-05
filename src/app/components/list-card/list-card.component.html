@@ -1,5 +1,6 @@
-<div class="content animate__pulse" [ngClass]="on ? 'list-song': ''">
-  <div *ngFor="let item of data" >
+<app-spinner *ngIf="loadding"></app-spinner>
+<div class="content " [ngClass]="on ? 'list-song': ''" *ngIf="!loadding">
+  <div *ngFor="let item of data" class="slide-top" >
     <app-card-song  [data]="item" (onPlay)="action($event)"></app-card-song>
   </div>
 </div>

@@ -11,15 +11,20 @@ const routes: Routes = [
     component: HomeComponent,
     children:[
       {
+        path:':find',
+        component:ListCardComponent,
+      },
+      {
         path:'',
         component:ListCardComponent,
       },
       {
-        path: 'artista:id',
+        path: 'artista/:id',
         component: ArtistComponent
       },
     ]
   },
+
 
 ];
 

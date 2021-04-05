@@ -1,4 +1,4 @@
-import { TracksObject } from './../../interface/tracks';
+import { TracksObject } from '../../model/interface/tracks';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { storeTrack } from 'src/app/store/store.structure';
@@ -35,7 +35,7 @@ export class PlayerComponent implements OnInit, AfterViewInit {
         if (x.trackData.id == this.data.id) {
           this.status = {hasData:x.trackCardObject.on,isPause:!x.trackCardObject.status}
           if (this.audio !=  undefined){
-            !this.status.isPause ? this.audio.nativeElement.play() : this.audio.nativeElement.pause();
+            this.status.isPause ? this.audio.nativeElement.pause(): this.audio.nativeElement.play();
           }
         }
       }
@@ -43,23 +43,23 @@ export class PlayerComponent implements OnInit, AfterViewInit {
   }
 
 
-play() {
-  if(this.status.hasData){
-    !this.status.isPause ? this.pause() : this.playSong()
+  play() {
+    if(this.status.hasData){
+      !this.status.isPause ? this.pause() : this.playSong()
+    }
   }
-}
-pause() {
-  this.audio.nativeElement.pause();
-  this.store.dispatch(new PauseAction());
-}
+  pause() {
+    this.audio.nativeElement.pause();
+    this.store.dispatch(new PauseAction());
+  }
 
-playSong() {
-  this.audio.nativeElement.play();
-  this.store.dispatch(new PlayAction())
-}
+  playSong() {
+    this.audio.nativeElement.play();
+    this.store.dispatch(new PlayAction())
+  }
 
-goArtist(id) {
-  this.router.navigate(['artista', id])
-}
+  goArtist(id) {
+    this.router.navigate(['artista', id])
+  }
 
 }

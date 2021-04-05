@@ -1,10 +1,11 @@
 
 import { LoadAction } from './../../store/track.action';
 import { storeTrack } from './../../store/store.structure';
-import { TracksObject } from './../../interface/tracks';
+import { TracksObject } from '../../model/interface/tracks';
 import { TracksService } from './../../services/tracks.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { ActivatedRoute } from '@angular/router';
 export interface chillObjet {
   status:boolean,
   id: string,
@@ -19,22 +20,36 @@ export interface chillObjet {
 
 
 export class ListCardComponent implements OnInit {
+  @Input() arrayTrackForUser?:TracksObject[]
   public data:TracksObject[] = []
   public on:boolean = false
-
+  public loadding = false;
+  public find
   constructor(
-    private store : Store<{track: storeTrack}>,
+    private store: Store<{ track: storeTrack }>,
+    private route: ActivatedRoute,
     private track: TracksService) {
-      this.store.select('track').subscribe((x)=>{
-        console.log(x);
-      })
+      if(this.route.snapshot.params.find){
+        console.log(this.route.snapshot.params.find)
+        this.find = this.route.snapshot.params.find
+      }
     }
 
   ngOnInit(): void {
     this.getTrack()
   }
   getTrack(){
-    this.track.getTrack().subscribe((x:TracksObject[])=>{ this.data = x})
+
+    if (this.arrayTrackForUser){
+      this.data =  this.arrayTrackForUser;
+    }else{
+      this.loadding = true;
+      if(this.find){
+        this.track.getTrack(this.find).subscribe((x:TracksObject[])=>{ this.data = x; this.loadding = false})
+      }else{
+        this.track.getTrack().subscribe((x:TracksObject[])=>{ this.data = x; this.loadding = false})
+      }
+    }
   }
   action(e:chillObjet){
     this.track.getSong(e.id).subscribe(x=>{},(err)=>{

@@ -1,0 +1,31 @@
+.logo{
+    display: flex;
+    align-items: center;
+    width: 20%;
+    justify-content: center;
+  & .text{
+    font-size: xx-large;
+  }
+  & img{
+    width: 2em;
+    height: auto;
+    margin-left: 5px;
+  }
+
+
+}
+.mat-toolbar.mat-toolbar-single-row {
+	justify-content: space-between;
+}
+
+mat-icon{
+  font-size: 2em;
+}
+.mr{
+  margin-right: 20px;
+
+}
+ .input{
+  font-size: initial;
+  font-weight: initial;
+ }
