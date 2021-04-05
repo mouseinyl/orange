@@ -4,6 +4,9 @@
   width: auto;
   margin: auto;
   justify-content: center;
+  overflow-x: auto;
+
+  height: 700px;
   & .repro{
     width:35% ;
     display: flex;

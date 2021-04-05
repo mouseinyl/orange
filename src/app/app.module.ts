@@ -24,6 +24,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { PlayerComponent } from './components/player/player.component';
 import { CommetsComponent } from './components/commets/commets.component';
 import { FormsModule } from '@angular/forms';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 
@@ -47,6 +48,8 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     AngularMaterialModule,
     FormsModule,
+    InfiniteScrollModule,
+    // InfiniteScrollDirective,
     StoreModule.forRoot({track: trackReducer})
   ],
   providers: [],

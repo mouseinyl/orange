@@ -21,12 +21,10 @@ export class TracksService {
     this.options.params = this.options.params.set('client_id', this.clientId)
     // this.options.params = this.options.params.set('client_id', this.clientId)
   }
-  getTrack(find?:string){
-    if(find){
-      this.options.params = this.options.params.set('q', find);
-    }else{
-      this.options.params = this.options.params.set('q', '');
-    }
+  getTrack(limit?:number,find?:string){
+
+    this.options.params = find ? this.options.params.set('q', find) : this.options.params.set('q', '');
+    this.options.params = limit ? this.options.params.set('limit', limit+'') : this.options.params.set('limit', "25");
     return this.http.get(this.endpoint+ 'tracks' ,this.options)
   }
   getSong(id){
